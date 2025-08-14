@@ -45,10 +45,10 @@ def me(request):
 
 urlpatterns = [
     # Auth
-    path("jwt/create/", TokenObtainPairView.as_view(), name="jwt-create"),
+    path("login", TokenObtainPairView.as_view(), name="users-login"),
     path("jwt/refresh/", TokenRefreshView.as_view(), name="jwt-refresh"),
 
     # Minimal user endpoints
     path("register/", register, name="users-register"),
-    path("me/", me, name="users-me"),
+    path("profile/", me, name="users-profile"),
 ]
